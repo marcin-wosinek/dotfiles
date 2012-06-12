@@ -4,6 +4,7 @@ git submodule update --init --recursive
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 ln -s $DIR/bashrc ~/.bashrc
+ln -s $DIR/bashrc ~/.bash_profile
 ln -s $DIR/screenrc ~/.screenrc
 ln -s $DIR/dotvim/vimrc ~/.vimrc
 ln -s $DIR/dotvim ~/.vim
@@ -12,7 +13,7 @@ while true; do
     read -p "Are you Marcin Wosinek?" yn
     case $yn in
 
-        [Yy]* ) ln -s gitconfig ~/.gitconfig; break;;
+        [Yy]* ) ln -s $DIR/gitconfig ~/.gitconfig; break;;
         [Nn]* ) break;;
         * ) echo "Please answer yes or no.";;
     esac
