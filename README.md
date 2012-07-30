@@ -10,6 +10,7 @@ Installation:
 ln -s dotfiles/bashrc .bashrc
 ln -s dotfiles/gitconfig .gitconfig
 ln -s dotfiles/screenrc .screenrc
+ln -s dotfiles/screenrcnested .screenrcnested
 ln -s dotfiles/dotvim/vimrc .vimrc
 ln -s dotfiles/dotvim .vim
 
