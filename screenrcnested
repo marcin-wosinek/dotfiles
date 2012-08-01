@@ -1,1 +1,1 @@
-escape ^Vv # Instead of Control-a, make the escape/command character be Control-b
+escape ^Gg # Instead of Control-a, make the escape/command character be Control-b
