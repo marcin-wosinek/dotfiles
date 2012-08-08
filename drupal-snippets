@@ -1,0 +1,7 @@
+# deinstalling drupal with drush
+`drush sql-connect` -e "show tables" -s | xargs -I "@@" `drush sql-connect` -e "DROP TABLE @@"
+
+# show php error
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ini_set('display_startup_errors', TRUE);
