@@ -9,6 +9,7 @@ ln -s $DIR/screenrc ~/.screenrc
 ln -s $DIR/screenrcnested ~/.screenrcnested
 ln -s $DIR/dotvim/vimrc ~/.vimrc
 ln -s $DIR/dotvim ~/.vim
+ln -s $DIR/gitignore ~/.gitignore
 
 while true; do
     read -p "Are you Marcin Wosinek?" yn
