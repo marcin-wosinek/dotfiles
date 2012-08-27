@@ -5,3 +5,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
 ini_set('display_startup_errors', TRUE);
+
+# drupal patch
+git format-patch origin/[branchname] --stdout >  [project_name]-[short-description]-[issue-number]-[comment-number].patch
+git diff origin/[branchname] > [project_name]-[short-description]-[issue-number]-[comment-number].patch
