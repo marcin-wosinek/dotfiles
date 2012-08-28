@@ -1,0 +1,14 @@
+{
+  "browser"     : true, // Can use default global variables like document, window, etc.
+  "curly"       : true, // Require {} in if, for
+  "eqeqeq"      : true, // Require strict equals
+  "expr"        : true, // Drupal-specific, needs to be evaluated individually during review
+  "forin"       : true, // Drupal-specific, already fixed core bugs
+  "latedef"     : true, // Define functions before using them
+  "newcap"      : true, // Drupal Coding Standard
+  "noarg"       : true, // Can't use arguments.callee or arguments.caller
+  "predef"      : ["Drupal", "jQuery"], // Drupal-specific
+  "trailing"    : true, // Make sure there is no trailling spaces
+  "undef"       : true, // Variables has to be defined before use
+  "unused"      : true // Declared variables must be used
+}
