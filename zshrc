@@ -30,3 +30,4 @@ bindkey \^U backward-kill-line
 bindkey \^K kill-line
 bindkey \^P up-history
 bindkey \^N down-history
+bindkey \^R history-incremental-search-backward
