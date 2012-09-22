@@ -12,10 +12,21 @@ compinit
 # End of lines added by compinstall
 
 # User specific aliases and functions
-PS1=$'[\e[0;32m%~]\e[0m\n\e[0;36m%n\e[0m\e[0;33m->\e[0m '
+autoload -U colors
+colors
+setopt prompt_subst
+local smiley="%(?,%{$fg[green]%}☺%{$reset_color%},%{$fg[red]%}☹%{$reset_color%})"
+PS1=$'[%{$fg[green]%}%~]%{$reset_color%}\n%{$fg[cyan]%}%n%{$reset_color%}${smiley}%{$fg[yellow]%}->%{$reset_color%} '
 
+# Default permission 775
 umask 0002
 
 # Vim like binding
 bindkey -M viins 'kj' vi-cmd-mode
 bindkey -M viins 'jk' vi-cmd-mode
+
+# Favorite binding from bash
+bindkey \^U backward-kill-line
+bindkey \^K kill-line
+bindkey \^P up-history
+bindkey \^N down-history
