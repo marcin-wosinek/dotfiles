@@ -31,3 +31,7 @@ umask 0002
 # bindkey \^P up-history
 # bindkey \^N down-history
 # bindkey \^R history-incremental-search-backward
+
+# Ubiquitous history
+setopt inc_append_history
+setopt share_history
