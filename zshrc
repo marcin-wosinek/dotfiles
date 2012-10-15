@@ -32,6 +32,9 @@ umask 0002
 # bindkey \^N down-history
 # bindkey \^R history-incremental-search-backward
 
+# # Favorite binding from bash
+bindkey \^U backward-kill-line
+
 # Ubiquitous history
 setopt inc_append_history
-setopt share_history
+# setopt share_history
