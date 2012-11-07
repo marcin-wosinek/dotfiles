@@ -20,11 +20,17 @@ PS1=$'[%{$fg[green]%}%~]%{$reset_color%}\n%{$fg[cyan]%}%n%{$reset_color%}%{$fg[y
 # Default permission 775
 umask 0002
 
-# bindkey -v
-# Vim like binding
-# bindkey -M viins 'kj' vi-cmd-mode
-# bindkey -M viins 'jk' vi-cmd-mode
-#
+bindkey -v
+Vim like binding
+bindkey -M viins 'kj' vi-cmd-mode
+bindkey -M viins 'jk' vi-cmd-mode
+bindkey -M viins 'Kj' vi-cmd-mode
+bindkey -M viins 'Jk' vi-cmd-mode
+bindkey -M viins 'kJ' vi-cmd-mode
+bindkey -M viins 'jK' vi-cmd-mode
+bindkey -M viins 'KJ' vi-cmd-mode
+bindkey -M viins 'JK' vi-cmd-mode
+
 # # Favorite binding from bash
 # bindkey \^U backward-kill-line
 # bindkey \^K kill-line
