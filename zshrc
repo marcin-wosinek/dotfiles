@@ -21,7 +21,7 @@ PS1=$'[%{$fg[green]%}%~]%{$reset_color%}\n%{$fg[cyan]%}%n%{$reset_color%}%{$fg[y
 umask 0002
 
 bindkey -v
-Vim like binding
+# Vim like binding
 bindkey -M viins 'kj' vi-cmd-mode
 bindkey -M viins 'jk' vi-cmd-mode
 bindkey -M viins 'Kj' vi-cmd-mode
