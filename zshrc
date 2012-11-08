@@ -31,6 +31,8 @@ bindkey -M viins 'jK' vi-cmd-mode
 bindkey -M viins 'KJ' vi-cmd-mode
 bindkey -M viins 'JK' vi-cmd-mode
 
+bindkey -M vicmd '?' history-incremental-search-backward
+
 # # Favorite binding from bash
 # bindkey \^U backward-kill-line
 # bindkey \^K kill-line
@@ -43,4 +45,3 @@ bindkey \^U backward-kill-line
 
 # Ubiquitous history
 setopt inc_append_history
-# setopt share_history
