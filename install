@@ -14,6 +14,9 @@ ln -s $DIR/jshintrc ~/.jshintrc
 ln -s $DIR/zshrc ~/.zshrc
 ln -s $DIR/tmux.conf ~/.tmux.conf
 
+ln -s $DIR/tmux-colors-solarized ~/tmux-colors-solarized
+ln -s $DIR/tmux-powerline ~/tmux-powerline
+
 while true; do
     read -p "Are you Marcin Wosinek?" yn
     case $yn in
