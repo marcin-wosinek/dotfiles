@@ -7,3 +7,12 @@
 [submodule "tmux-colors-solarized"]
 	path = tmux-colors-solarized
 	url = git://github.com/seebi/tmux-colors-solarized.git
+[submodule "guake-colors-solarized"]
+	path = guake-colors-solarized
+	url = git://github.com/coolwanglu/guake-colors-solarized.git
+[submodule "consolasPowerline"]
+	path = consolasPowerline
+	url = git@github.com:marcin-wosinek/consolasPowerlineVim.git
+[submodule "fonts/ubuntu-mono-powerline"]
+	path = fonts/ubuntu-mono-powerline
+	url = git@github.com:marcin-wosinek/ubuntu-mono-powerline.git
