@@ -13,6 +13,3 @@
 [submodule "consolasPowerline"]
 	path = consolasPowerline
 	url = git@github.com:marcin-wosinek/consolasPowerlineVim.git
-[submodule "fonts/ubuntu-mono-powerline"]
-	path = fonts/ubuntu-mono-powerline
-	url = git@github.com:marcin-wosinek/ubuntu-mono-powerline.git
