@@ -13,6 +13,7 @@ ln -s $DIR/gitignore ~/.gitignore
 ln -s $DIR/jshintrc ~/.jshintrc
 ln -s $DIR/zshrc ~/.zshrc
 ln -s $DIR/tmux.conf ~/.tmux.conf
+ln -s $DIR/tmux.nested.conf ~/.tmux.nested.conf
 
 ln -s $DIR/Xdefaults ~/.Xdefaults
 
