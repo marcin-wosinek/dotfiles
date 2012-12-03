@@ -10,17 +10,33 @@ tmux new-window -t $SESSION:0 -k -n admin
 SYNERGY="synergy"
 tmux new-session -d -s $SYNERGY
 tmux new-window -t $SYNERGY:0 -k -n svn
-tmux send-keys -t synergy:0 "cd ~/workspace/synergy" C-m
-tmux send-keys -t synergy:0 "clear" C-m
+tmux send-keys -t $SYNERGY:0 "cd ~/workspace/synergy" C-m
+tmux send-keys -t $SYNERGY:0 "clear" C-m
 tmux new-window -t $SYNERGY:1 -n portal-root
-tmux send-keys -t synergy:1 "cd ~/workspace/synergy/synergy/src/main/portal-root" C-m
-tmux send-keys -t synergy:1 "clear" C-m
+tmux send-keys -t $SYNERGY:1 "cd ~/workspace/synergy/synergy/src/main/portal-root" C-m
+tmux send-keys -t $SYNERGY:1 "clear" C-m
 tmux new-window -t $SYNERGY:2 -n crowler
-tmux send-keys -t synergy:2 "cd ~/workspace/synergy/synergy/src/main/portal-root" C-m
-tmux send-keys -t synergy:2 "clear" C-m
+tmux send-keys -t $SYNERGY:2 "cd ~/workspace/synergy/synergy/src/main/portal-root" C-m
+tmux send-keys -t $SYNERGY:2 "clear" C-m
 
 tmux new-window -t $SESSION:1 -n $SYNERGY
 tmux send-keys -t $SESSION:1 "unset TMUX; tmux attach -t $SYNERGY" C-m
+
+#synergy-ubuntu
+SYNERGY_UBUNTU="synergy-ubuntu"
+tmux new-session -d -s $SYNERGY_UBUNTU
+tmux new-window -t $SYNERGY_UBUNTU:0 -k -n svn
+tmux send-keys -t $SYNERGY_UBUNTU:0 "cd ~/workspace/synergy-ubuntu" C-m
+tmux send-keys -t $SYNERGY_UBUNTU:0 "clear" C-m
+tmux new-window -t $SYNERGY_UBUNTU:1 -n portal-root
+tmux send-keys -t $SYNERGY_UBUNTU:1 "cd ~/workspace/synergy-ubuntu/synergy/src/main/portal-root" C-m
+tmux send-keys -t $SYNERGY_UBUNTU:1 "clear" C-m
+tmux new-window -t $SYNERGY_UBUNTU:2 -n crowler
+tmux send-keys -t $SYNERGY_UBUNTU:2 "cd ~/workspace/synergy-ubuntu/synergy/src/main/portal-root" C-m
+tmux send-keys -t $SYNERGY_UBUNTU:2 "clear" C-m
+
+tmux new-window -t $SESSION:2 -n $SYNERGY_UBUNTU
+tmux send-keys -t $SESSION:2 "unset TMUX; tmux attach -t $SYNERGY_UBUNTU" C-m
 
 #attach
 tmux attach -t $SESSION
