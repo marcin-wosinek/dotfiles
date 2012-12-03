@@ -1,0 +1,26 @@
+#!/bin/bash
+SESSION="main"
+
+tmux new-session -d -s $SESSION
+
+#admin
+tmux new-window -t $SESSION:0 -k -n admin
+
+#synergy
+SYNERGY="synergy"
+tmux new-session -d -s $SYNERGY
+tmux new-window -t $SYNERGY:0 -k -n svn
+tmux send-keys -t synergy:0 "cd ~/workspace/synergy" C-m
+tmux send-keys -t synergy:0 "clear" C-m
+tmux new-window -t $SYNERGY:1 -n portal-root
+tmux send-keys -t synergy:1 "cd ~/workspace/synergy/synergy/src/main/portal-root" C-m
+tmux send-keys -t synergy:1 "clear" C-m
+tmux new-window -t $SYNERGY:2 -n crowler
+tmux send-keys -t synergy:2 "cd ~/workspace/synergy/synergy/src/main/portal-root" C-m
+tmux send-keys -t synergy:2 "clear" C-m
+
+tmux new-window -t $SESSION:1 -n $SYNERGY
+tmux send-keys -t $SESSION:1 "unset TMUX; tmux attach -t $SYNERGY" C-m
+
+#attach
+tmux attach -t $SESSION

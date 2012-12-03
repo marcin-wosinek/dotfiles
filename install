@@ -17,6 +17,8 @@ ln -s $DIR/tmux.nested.conf ~/.tmux.nested.conf
 
 ln -s $DIR/Xdefaults ~/.Xdefaults
 
+ln -s $DIR/tmuxgo ~/tmuxgo
+
 while true; do
     read -p "Are you Marcin Wosinek?" yn
     case $yn in
