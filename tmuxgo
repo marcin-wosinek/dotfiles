@@ -15,6 +15,7 @@ tmux send-keys -t $SYNERGY:0 "clear" C-m
 tmux new-window -t $SYNERGY:1 -n portal-root
 tmux send-keys -t $SYNERGY:1 "cd ~/workspace/synergy/synergy/src/main/portal-root" C-m
 tmux send-keys -t $SYNERGY:1 "clear" C-m
+tmux send-keys -t $SYNERGY:1 "vim ../webapp/WEB-INF/wro.groovy" C-m
 tmux new-window -t $SYNERGY:2 -n crowler
 tmux send-keys -t $SYNERGY:2 "cd ~/workspace/synergy/synergy/src/main/portal-root" C-m
 tmux send-keys -t $SYNERGY:2 "clear" C-m
