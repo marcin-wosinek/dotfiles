@@ -19,6 +19,9 @@ tmux send-keys -t $SYNERGY:1 "vim ../webapp/WEB-INF/wro.groovy" C-m
 tmux new-window -t $SYNERGY:2 -n crowler
 tmux send-keys -t $SYNERGY:2 "cd ~/workspace/synergy/synergy/src/main/portal-root" C-m
 tmux send-keys -t $SYNERGY:2 "clear" C-m
+tmux new-window -t $SYNERGY:3 -n struts
+tmux send-keys -t $SYNERGY:3 "cd ~/workspace/synergy/synergy/src/main/resources/template/synergy" C-m
+tmux send-keys -t $SYNERGY:3 "clear" C-m
 
 tmux new-window -t $SESSION:1 -n $SYNERGY
 tmux send-keys -t $SESSION:1 "unset TMUX; tmux attach -t $SYNERGY" C-m
