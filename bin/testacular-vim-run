@@ -1,2 +1,5 @@
 #!/bin/sh
-echo test
+HASH=`tr -dc "[:alpha:]" < /dev/urandom | head -c 8`
+
+testacular run > /tmp/testacular-run-output-$HASH
+cat /tmp/testacular-run-output-$HASH
