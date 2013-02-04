@@ -57,9 +57,14 @@ tmux send-keys -t $SYNERGY_SYNGULAR:2 "clear" C-m
 tmux new-window -t $SYNERGY_SYNGULAR:3 -n server
 tmux send-keys -t $SYNERGY_SYNGULAR:3 "cd ~/workspace/syngular" C-m
 tmux send-keys -t $SYNERGY_SYNGULAR:3 "clear" C-m
-tmux new-window -t $SYNERGY_SYNGULAR:4 -n crowler
+tmux send-keys -t $SYNERGY_SYNGULAR:3 "yeoman server" C-m
+tmux new-window -t $SYNERGY_SYNGULAR:4 -n testacular
 tmux send-keys -t $SYNERGY_SYNGULAR:4 "cd ~/workspace/syngular" C-m
 tmux send-keys -t $SYNERGY_SYNGULAR:4 "clear" C-m
+tmux send-keys -t $SYNERGY_SYNGULAR:3 "testacular start testacular.conf.js" C-m
+tmux new-window -t $SYNERGY_SYNGULAR:5 -n crowler
+tmux send-keys -t $SYNERGY_SYNGULAR:5 "cd ~/workspace/syngular" C-m
+tmux send-keys -t $SYNERGY_SYNGULAR:5 "clear" C-m
 
 tmux new-window -t $SESSION:3 -n $SYNERGY_SYNGULAR
 tmux send-keys -t $SESSION:3 "unset TMUX; tmux attach -t $SYNERGY_SYNGULAR" C-m
