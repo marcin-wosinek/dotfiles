@@ -50,3 +50,6 @@ setopt inc_append_history
 export LC_ALL=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export TERM=xterm-256color
+
+# Syntax higtlighing - TODO improve path
+source ~/dotfiles/zsh-highligthing/zsh-syntax-highlighting.zsh
