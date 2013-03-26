@@ -3,3 +3,5 @@ export MAVEN_OPTS="-Xms256m -Xmx768m -XX:MaxPermSize=256m -Xdebug -Xnoagent -Dja
 if [ -d "$HOME/bin" ] ; then
   PATH="$PATH:$HOME/bin"
 fi
+
+source .nvm/nvm.sh
