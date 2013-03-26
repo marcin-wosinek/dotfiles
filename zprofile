@@ -4,4 +4,5 @@ if [ -d "$HOME/bin" ] ; then
   PATH="$PATH:$HOME/bin"
 fi
 
-source .nvm/nvm.sh
+source ~/.nvm/nvm.sh
+nvm use 0.8
