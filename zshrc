@@ -53,6 +53,3 @@ export TERM=xterm-256color
 
 # Syntax higtlighing - TODO improve path
 source ~/dotfiles/zsh-highligthing/zsh-syntax-highlighting.zsh
-
-source ~/.nvm/nvm.sh
-nvm use 0.8
