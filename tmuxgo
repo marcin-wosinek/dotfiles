@@ -15,16 +15,42 @@ tmux send-keys -t $SYNERGY:0 "clear" C-m
 tmux new-window -t $SYNERGY:1 -n portal-root
 tmux send-keys -t $SYNERGY:1 "cd ~/workspace/synergy/synergy/src/main/portal-root" C-m
 tmux send-keys -t $SYNERGY:1 "clear" C-m
-tmux send-keys -t $SYNERGY:1 "vim ../webapp/WEB-INF/wro.groovy" C-m
+tmux send-keys -t $SYNERGY:1 "vim ../webapp/WEB-INF/wro.groovy"
 tmux new-window -t $SYNERGY:2 -n crowler
 tmux send-keys -t $SYNERGY:2 "cd ~/workspace/synergy/synergy/src/main/portal-root" C-m
 tmux send-keys -t $SYNERGY:2 "clear" C-m
 tmux new-window -t $SYNERGY:3 -n struts
 tmux send-keys -t $SYNERGY:3 "cd ~/workspace/synergy/synergy/src/main/resources/template/synergy" C-m
 tmux send-keys -t $SYNERGY:3 "clear" C-m
+tmux new-window -t $SYNERGY:4 -n server
+tmux send-keys -t $SYNERGY:4 "cd ~/workspace/synergy" C-m
+tmux send-keys -t $SYNERGY:4 "clear" C-m
 
-tmux new-window -t $SESSION:1 -n $SYNERGY
+tmux new-window -t $SESSION:1 -n "$SYNERGY"
 tmux send-keys -t $SESSION:1 "unset TMUX; tmux attach -t $SYNERGY" C-m
+
+#synergy
+WINDOW="synergy29"
+tmux new-session -d -s $WINDOW
+tmux new-window -t $WINDOW:0 -k -n svn
+tmux send-keys -t $WINDOW:0 "cd ~/workspace/synergy-2.9" C-m
+tmux send-keys -t $WINDOW:0 "clear" C-m
+tmux new-window -t $WINDOW:1 -n portal-root
+tmux send-keys -t $WINDOW:1 "cd ~/workspace/synergy-2.9/synergy/src/main/portal-root" C-m
+tmux send-keys -t $WINDOW:1 "clear" C-m
+tmux send-keys -t $WINDOW:1 "vim ../webapp/WEB-INF/wro.groovy"
+tmux new-window -t $WINDOW:2 -n crowler
+tmux send-keys -t $WINDOW:2 "cd ~/workspace/synergy-2.9/synergy/src/main/portal-root" C-m
+tmux send-keys -t $WINDOW:2 "clear" C-m
+tmux new-window -t $WINDOW:3 -n struts
+tmux send-keys -t $WINDOW:3 "cd ~/workspace/synergy-2.9/synergy/src/main/resources/template/synergy" C-m
+tmux send-keys -t $WINDOW:3 "clear" C-m
+tmux new-window -t $WINDOW:4 -k -n server
+tmux send-keys -t $WINDOW:4 "cd ~/workspace/synergy-2.9" C-m
+tmux send-keys -t $WINDOW:4 "clear" C-m
+
+tmux new-window -t $SESSION:2 -n "synergy-2.9"
+tmux send-keys -t $SESSION:2 "unset TMUX; tmux attach -t $WINDOW" C-m
 
 #syngular
 SYNERGY_SYNGULAR="syngular"
@@ -50,8 +76,8 @@ tmux new-window -t $SYNERGY_SYNGULAR:5 -n crowler
 tmux send-keys -t $SYNERGY_SYNGULAR:5 "cd ~/workspace/syngular" C-m
 tmux send-keys -t $SYNERGY_SYNGULAR:5 "clear" C-m
 
-tmux new-window -t $SESSION:2 -n $SYNERGY_SYNGULAR
-tmux send-keys -t $SESSION:2 "unset TMUX; tmux attach -t $SYNERGY_SYNGULAR" C-m
+tmux new-window -t $SESSION:3 -n "$SYNERGY_SYNGULAR"
+tmux send-keys -t $SESSION:3 "unset TMUX; tmux attach -t $SYNERGY_SYNGULAR" C-m
 
 #attach
 tmux attach -t $SESSION
