@@ -1,0 +1,49 @@
+#!/bin/bash
+SESSION="main"
+
+tmux new-session -d -s $SESSION
+
+# Admin
+tmux new-window -t $SESSION:0 -k -n admin
+
+# Blog
+WINDOW="blog"
+tmux new-session -d -s $WINDOW
+tmux new-window -t $WINDOW:0 -k -n git
+tmux send-keys -t $WINDOW:0 "cd ~/workspace/blog/" C-m
+tmux send-keys -t $WINDOW:0 "clear" C-m
+tmux new-window -t $WINDOW:1 -n vim
+tmux send-keys -t $WINDOW:1 "cd ~/workspace/blog/" C-m
+tmux send-keys -t $WINDOW:1 "clear" C-m
+tmux new-window -t $WINDOW:2 -n crowler
+tmux send-keys -t $WINDOW:2 "cd ~/workspace/blog/" C-m
+tmux send-keys -t $WINDOW:2 "clear" C-m
+tmux new-window -t $WINDOW:3 -n server
+tmux send-keys -t $WINDOW:3 "cd ~/workspace/blog/" C-m
+tmux send-keys -t $WINDOW:3 "rvm use ruby-1.9.3-p429" C-m
+tmux send-keys -t $WINDOW:3 "jekyll server --watch --baseurl \"/blog\"" C-m
+
+tmux new-window -t $SESSION:1 -n "$WINDOW"
+tmux send-keys -t $SESSION:1 "unset TMUX; tmux attach -t $WINDOW" C-m
+
+# Workshop-2
+WINDOW="workshop-2"
+tmux new-session -d -s $WINDOW
+tmux new-window -t $WINDOW:0 -k -n git
+tmux send-keys -t $WINDOW:0 "cd ~/workspace/workshop-2/" C-m
+tmux send-keys -t $WINDOW:0 "clear" C-m
+tmux new-window -t $WINDOW:1 -n vim
+tmux send-keys -t $WINDOW:1 "cd ~/workspace/workshop-2/" C-m
+tmux send-keys -t $WINDOW:1 "clear" C-m
+tmux new-window -t $WINDOW:2 -n crowler
+tmux send-keys -t $WINDOW:2 "cd ~/workspace/workshop-2/" C-m
+tmux send-keys -t $WINDOW:2 "clear" C-m
+tmux new-window -t $WINDOW:3 -n server
+tmux send-keys -t $WINDOW:3 "cd ~/workspace/workshop-2/" C-m
+tmux send-keys -t $WINDOW:3 "grunt server" C-m
+
+tmux new-window -t $SESSION:2 -n "$WINDOW"
+tmux send-keys -t $SESSION:2 "unset TMUX; tmux attach -t $WINDOW" C-m
+
+#attach
+tmux attach -t $SESSION
