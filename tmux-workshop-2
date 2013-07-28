@@ -14,7 +14,7 @@ tmux send-keys -t $WINDOW:0 "cd ~/workspace/blog/" C-m
 tmux send-keys -t $WINDOW:0 "clear" C-m
 tmux new-window -t $WINDOW:1 -n vim
 tmux send-keys -t $WINDOW:1 "cd ~/workspace/blog/" C-m
-tmux send-keys -t $WINDOW:1 "clear" C-m
+tmux send-keys -t $WINDOW:1 "vim _posts/2013-07-31-2-Warsztaty-AngularJs-GeekCarrots-Poznan.md" C-m
 tmux new-window -t $WINDOW:2 -n crowler
 tmux send-keys -t $WINDOW:2 "cd ~/workspace/blog/" C-m
 tmux send-keys -t $WINDOW:2 "clear" C-m
@@ -34,7 +34,7 @@ tmux send-keys -t $WINDOW:0 "cd ~/workspace/workshop-2/" C-m
 tmux send-keys -t $WINDOW:0 "clear" C-m
 tmux new-window -t $WINDOW:1 -n vim
 tmux send-keys -t $WINDOW:1 "cd ~/workspace/workshop-2/" C-m
-tmux send-keys -t $WINDOW:1 "clear" C-m
+tmux send-keys -t $WINDOW:1 "vim app/scripts/app.js" C-m
 tmux new-window -t $WINDOW:2 -n crowler
 tmux send-keys -t $WINDOW:2 "cd ~/workspace/workshop-2/" C-m
 tmux send-keys -t $WINDOW:2 "clear" C-m
