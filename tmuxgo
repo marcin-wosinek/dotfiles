@@ -1,83 +1,86 @@
 #!/bin/bash
-SESSION="main"
+MAIN_SESSION="main"
 
-tmux new-session -d -s $SESSION
+tmux new-session -d -s $MAIN_SESSION
 
 #admin
-tmux new-window -t $SESSION:0 -k -n admin
+tmux new-window -t $MAIN_SESSION:0 -k -n admin
 
 #synergy
-WINDOW="synergy"
-tmux new-session -d -s $WINDOW
-tmux new-window -t $WINDOW:0 -k -n svn
-tmux send-keys -t $WINDOW:0 "cd ~/workspace/synergy" C-m
-tmux send-keys -t $WINDOW:0 "clear" C-m
-tmux new-window -t $WINDOW:1 -n portal-root
-tmux send-keys -t $WINDOW:1 "cd ~/workspace/synergy/synergy/src/main/portal-root" C-m
-tmux send-keys -t $WINDOW:1 "clear" C-m
-tmux send-keys -t $WINDOW:1 "vim ../webapp/WEB-INF/wro.groovy"
-tmux new-window -t $WINDOW:2 -n crowler
-tmux send-keys -t $WINDOW:2 "cd ~/workspace/synergy/synergy/src/main/portal-root" C-m
-tmux send-keys -t $WINDOW:2 "clear" C-m
-tmux new-window -t $WINDOW:3 -n struts
-tmux send-keys -t $WINDOW:3 "cd ~/workspace/synergy/synergy/src/main/resources/template/synergy" C-m
-tmux send-keys -t $WINDOW:3 "clear" C-m
-tmux new-window -t $WINDOW:4 -n server
-tmux send-keys -t $WINDOW:4 "cd ~/workspace/synergy" C-m
-tmux send-keys -t $WINDOW:4 "clear" C-m
+SESSION="synergy"
+SESSION_NAME="synergy"
+tmux new-session -d -s $SESSION
+tmux new-window -t "$SESSION:0" -k -n svn
+tmux send-keys -t "$SESSION:0" "cd ~/workspace/synergy" C-m
+tmux send-keys -t "$SESSION:0" "clear" C-m
+tmux new-window -t "$SESSION:1" -n portal-root
+tmux send-keys -t "$SESSION:1" "cd ~/workspace/synergy/synergy/src/main/portal-root" C-m
+tmux send-keys -t "$SESSION:1" "clear" C-m
+tmux send-keys -t "$SESSION:1" "vim ../webapp/WEB-INF/wro.groovy"
+tmux new-window -t "$SESSION:2" -n crowler
+tmux send-keys -t "$SESSION:2" "cd ~/workspace/synergy/synergy/src/main/portal-root" C-m
+tmux send-keys -t "$SESSION:2" "clear" C-m
+tmux new-window -t "$SESSION:3" -n struts
+tmux send-keys -t "$SESSION:3" "cd ~/workspace/synergy/synergy/src/main/resources/template/synergy" C-m
+tmux send-keys -t "$SESSION:3" "clear" C-m
+tmux new-window -t "$SESSION:4" -n server
+tmux send-keys -t "$SESSION:4" "cd ~/workspace/synergy" C-m
+tmux send-keys -t "$SESSION:4" "clear" C-m
 
-tmux new-window -t $SESSION:1 -n "$WINDOW"
-tmux send-keys -t $SESSION:1 "unset TMUX; tmux attach -t $WINDOW" C-m
+tmux new-window -t $MAIN_SESSION:1 -n "$SESSION_NAME"
+tmux send-keys -t $MAIN_SESSION:1 "unset TMUX; tmux attach -t $SESSION" C-m
 
 #synergy
-WINDOW="synergy-2.13"
-tmux new-session -d -s $WINDOW
-tmux new-window -t $WINDOW:0 -k -n svn
-tmux send-keys -t $WINDOW:0 "cd ~/workspace/synergy-2.13" C-m
-tmux send-keys -t $WINDOW:0 "clear" C-m
-tmux new-window -t $WINDOW:1 -n portal-root
-tmux send-keys -t $WINDOW:1 "cd ~/workspace/synergy-2.13/synergy/src/main/portal-root" C-m
-tmux send-keys -t $WINDOW:1 "clear" C-m
-tmux send-keys -t $WINDOW:1 "vim ../webapp/WEB-INF/wro.groovy"
-tmux new-window -t $WINDOW:2 -n crowler
-tmux send-keys -t $WINDOW:2 "cd ~/workspace/synergy-2.13/synergy/src/main/portal-root" C-m
-tmux send-keys -t $WINDOW:2 "clear" C-m
-tmux new-window -t $WINDOW:3 -n struts
-tmux send-keys -t $WINDOW:3 "cd ~/workspace/synergy-2.13/synergy/src/main/resources/template/synergy" C-m
-tmux send-keys -t $WINDOW:3 "clear" C-m
-tmux new-window -t $WINDOW:4 -k -n server
-tmux send-keys -t $WINDOW:4 "cd ~/workspace/synergy-2.13" C-m
-tmux send-keys -t $WINDOW:4 "clear" C-m
+SESSION="synergy_2_13"
+SESSION_NAME="synergy-2.13"
+tmux new-session -d -s $SESSION
+tmux new-window -t "$SESSION:0" -k -n svn
+tmux send-keys -t "$SESSION:0" "cd ~/workspace/synergy-2.13" C-m
+tmux send-keys -t "$SESSION:0" "clear" C-m
+tmux new-window -t "$SESSION:1" -n portal-root
+tmux send-keys -t "$SESSION:1" "cd ~/workspace/synergy-2.13/synergy/src/main/portal-root" C-m
+tmux send-keys -t "$SESSION:1" "clear" C-m
+tmux send-keys -t "$SESSION:1" "vim ../webapp/WEB-INF/wro.groovy"
+tmux new-window -t "$SESSION:2" -n crowler
+tmux send-keys -t "$SESSION:2" "cd ~/workspace/synergy-2.13/synergy/src/main/portal-root" C-m
+tmux send-keys -t "$SESSION:2" "clear" C-m
+tmux new-window -t "$SESSION:3" -n struts
+tmux send-keys -t "$SESSION:3" "cd ~/workspace/synergy-2.13/synergy/src/main/resources/template/synergy" C-m
+tmux send-keys -t "$SESSION:3" "clear" C-m
+tmux new-window -t "$SESSION:4" -k -n server
+tmux send-keys -t "$SESSION:4" "cd ~/workspace/synergy-2.13" C-m
+tmux send-keys -t "$SESSION:4" "clear" C-m
 
-tmux new-window -t $SESSION:2 -n "$WINDOW"
-tmux send-keys -t $SESSION:2 "unset TMUX; tmux attach -t $WINDOW" C-m
+tmux new-window -t $MAIN_SESSION:2 -n "$SESSION_NAME"
+tmux send-keys -t $MAIN_SESSION:2 "unset TMUX; tmux attach -t $SESSION" C-m
 
 #syngular
-WINDOW="syngular"
-tmux new-session -d -s $WINDOW
-tmux new-window -t $WINDOW:0 -k -n git
-tmux send-keys -t $WINDOW:0 "cd ~/workspace/syngular" C-m
-tmux send-keys -t $WINDOW:0 "clear" C-m
-tmux new-window -t $WINDOW:1 -n vim
-tmux send-keys -t $WINDOW:1 "cd ~/workspace/syngular" C-m
-tmux send-keys -t $WINDOW:1 "clear" C-m
-tmux new-window -t $WINDOW:2 -n yeoman
-tmux send-keys -t $WINDOW:2 "cd ~/workspace/syngular" C-m
-tmux send-keys -t $WINDOW:2 "clear" C-m
-tmux new-window -t $WINDOW:3 -n server
-tmux send-keys -t $WINDOW:3 "cd ~/workspace/syngular" C-m
-tmux send-keys -t $WINDOW:3 "clear" C-m
-tmux send-keys -t $WINDOW:3 "grunt server" C-m
-tmux new-window -t $WINDOW:4 -n testacular
-tmux send-keys -t $WINDOW:4 "cd ~/workspace/syngular" C-m
-tmux send-keys -t $WINDOW:4 "clear" C-m
-tmux send-keys -t $WINDOW:4 "testacular start testacular.conf.js" C-m
-tmux new-window -t $WINDOW:5 -n crowler
-tmux send-keys -t $WINDOW:5 "cd ~/workspace/syngular" C-m
-tmux send-keys -t $WINDOW:5 "clear" C-m
+SESSION="syngular"
+SESSION_NAME="syngular"
+tmux new-session -d -s $SESSION
+tmux new-window -t "$SESSION:0" -k -n git
+tmux send-keys -t "$SESSION:0" "cd ~/workspace/syngular" C-m
+tmux send-keys -t "$SESSION:0" "clear" C-m
+tmux new-window -t "$SESSION:1" -n vim
+tmux send-keys -t "$SESSION:1" "cd ~/workspace/syngular" C-m
+tmux send-keys -t "$SESSION:1" "clear" C-m
+tmux new-window -t "$SESSION:2" -n yeoman
+tmux send-keys -t "$SESSION:2" "cd ~/workspace/syngular" C-m
+tmux send-keys -t "$SESSION:2" "clear" C-m
+tmux new-window -t "$SESSION:3" -n server
+tmux send-keys -t "$SESSION:3" "cd ~/workspace/syngular" C-m
+tmux send-keys -t "$SESSION:3" "clear" C-m
+tmux send-keys -t "$SESSION:3" "grunt server" C-m
+tmux new-window -t "$SESSION:4" -n testacular
+tmux send-keys -t "$SESSION:4" "cd ~/workspace/syngular" C-m
+tmux send-keys -t "$SESSION:4" "clear" C-m
+tmux send-keys -t "$SESSION:4" "testacular start testacular.conf.js" C-m
+tmux new-window -t "$SESSION:5" -n crowler
+tmux send-keys -t "$SESSION:5" "cd ~/workspace/syngular" C-m
+tmux send-keys -t "$SESSION:5" "clear" C-m
 
-tmux new-window -t $SESSION:3 -n "$WINDOW"
-tmux send-keys -t $SESSION:3 "unset TMUX; tmux attach -t $WINDOW" C-m
+tmux new-window -t $MAIN_SESSION:3 -n "$SESSION_NAME"
+tmux send-keys -t $MAIN_SESSION:3 "unset TMUX; tmux attach -t $SESSION" C-m
 
 #attach
-tmux attach -t $SESSION
+tmux attach -t $MAIN_SESSION
