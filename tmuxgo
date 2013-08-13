@@ -82,5 +82,25 @@ tmux send-keys -t "$SESSION:5" "clear" C-m
 tmux new-window -t $MAIN_SESSION:3 -n "$SESSION_NAME"
 tmux send-keys -t $MAIN_SESSION:3 "unset TMUX; tmux attach -t $SESSION" C-m
 
+#syngular
+SESSION="new_syngular"
+SESSION_NAME="new-syngular"
+tmux new-session -d -s $SESSION
+tmux new-window -t "$SESSION:0" -k -n git
+tmux send-keys -t "$SESSION:0" "cd ~/workspace/new-syngular" C-m
+tmux send-keys -t "$SESSION:0" "clear" C-m
+tmux new-window -t "$SESSION:1" -n vim
+tmux send-keys -t "$SESSION:1" "cd ~/workspace/new-syngular" C-m
+tmux send-keys -t "$SESSION:1" "clear" C-m
+tmux new-window -t "$SESSION:2" -n crawler
+tmux send-keys -t "$SESSION:2" "cd ~/workspace/new-syngular" C-m
+tmux send-keys -t "$SESSION:2" "clear" C-m
+tmux new-window -t "$SESSION:3" -n crawler
+tmux send-keys -t "$SESSION:3" "cd ~/workspace/new-syngular" C-m
+tmux send-keys -t "$SESSION:3" "clear" C-m
+
+tmux new-window -t $MAIN_SESSION:4 -n "$SESSION_NAME"
+tmux send-keys -t $MAIN_SESSION:4 "unset TMUX; tmux attach -t $SESSION" C-m
+
 #attach
 tmux attach -t $MAIN_SESSION
