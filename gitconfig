@@ -18,3 +18,5 @@
 	ui = true
 [push]
 	default = matching
+[url "https://"]
+	insteadOf = git://
