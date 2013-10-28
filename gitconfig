@@ -7,7 +7,7 @@
   latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(refname:short) [%(committername)]'
   dc = diff --cached
   st = status -sb
-  ls = log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short
+  ls = log --graph --decorate --all --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --date=iso
   lg = log --graph --pretty=format:'%C(yellow)%h%Creset%C(white)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   standup = log --since '1 day ago' --oneline --author marcin.wosinek@gmail.com
   graph = log --graph --pretty=format':%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
