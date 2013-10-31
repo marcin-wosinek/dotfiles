@@ -5,4 +5,4 @@ if [ -d "$HOME/bin" ] ; then
 fi
 
 source ~/.nvm/nvm.sh
-nvm use 0.8
+nvm use 0.10.21
