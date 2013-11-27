@@ -47,20 +47,17 @@ tmux send-keys -t "$SESSION:0" "clear" C-m
 tmux new-window -t "$SESSION:1" -n vim
 tmux send-keys -t "$SESSION:1" "cd ~/workspace/synergy/synergy/src/main/portal-root/_content/j/syngular-dev" C-m
 tmux send-keys -t "$SESSION:1" "clear" C-m
-tmux new-window -t "$SESSION:2" -n yeoman
+tmux new-window -t "$SESSION:2" -n crowler
 tmux send-keys -t "$SESSION:2" "cd ~/workspace/synergy/synergy/src/main/portal-root/_content/j/syngular-dev" C-m
 tmux send-keys -t "$SESSION:2" "clear" C-m
 tmux new-window -t "$SESSION:3" -n server
 tmux send-keys -t "$SESSION:3" "cd ~/workspace/synergy/synergy/src/main/portal-root/_content/j/syngular-dev" C-m
 tmux send-keys -t "$SESSION:3" "clear" C-m
 tmux send-keys -t "$SESSION:3" "grunt server" C-m
-tmux new-window -t "$SESSION:4" -n testacular
+tmux new-window -t "$SESSION:4" -n karma
 tmux send-keys -t "$SESSION:4" "cd ~/workspace/synergy/synergy/src/main/portal-root/_content/j/syngular-dev" C-m
 tmux send-keys -t "$SESSION:4" "clear" C-m
-tmux send-keys -t "$SESSION:4" "testacular start testacular.conf.js" C-m
-tmux new-window -t "$SESSION:5" -n crowler
-tmux send-keys -t "$SESSION:5" "cd ~/workspace/synergy/synergy/src/main/portal-root/_content/j/syngular-dev" C-m
-tmux send-keys -t "$SESSION:5" "clear" C-m
+tmux send-keys -t "$SESSION:4" "karma start" C-m
 
 tmux new-window -t $MAIN_SESSION:2 -n "$SESSION_NAME"
 tmux send-keys -t $MAIN_SESSION:2 "unset TMUX; tmux attach -t $SESSION" C-m
@@ -146,6 +143,20 @@ tmux send-keys -t "$SESSION:2" "clear" C-m
 
 tmux new-window -t $MAIN_SESSION:6 -n "$SESSION_NAME"
 tmux send-keys -t $MAIN_SESSION:6 "unset TMUX; tmux attach -t $SESSION" C-m
+
+#syngular
+SESSION="syngular2"
+SESSION_NAME="syngular2"
+tmux new-session -d -s $SESSION
+tmux new-window -t "$SESSION:0" -k -n git
+tmux send-keys -t "$SESSION:0" "cd ~/workspace/syngular2" C-m
+tmux send-keys -t "$SESSION:0" "clear" C-m
+tmux new-window -t "$SESSION:1" -n vim
+tmux send-keys -t "$SESSION:1" "cd ~/workspace/syngular2" C-m
+tmux send-keys -t "$SESSION:1" "clear" C-m
+
+tmux new-window -t $MAIN_SESSION:7 -n "$SESSION_NAME"
+tmux send-keys -t $MAIN_SESSION:7 "unset TMUX; tmux attach -t $SESSION" C-m
 
 #attach
 tmux attach -t $MAIN_SESSION

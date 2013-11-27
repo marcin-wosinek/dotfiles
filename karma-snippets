@@ -1,0 +1,5 @@
+# quiletly run karma form vim
+if !exists("karma_make")
+  let karma_make = 1
+  autocmd BufWritePost *js !(karma run karma-0.10.conf.js &> /dev/null &) &> /dev/null
+endif

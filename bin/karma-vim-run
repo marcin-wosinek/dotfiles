@@ -1,0 +1,6 @@
+#!/bin/sh
+HASH=`tr -dc "[:alpha:]" < /dev/urandom | head -c 8`
+
+karma run | sed -r "s/\x1B\[([0-9]{1,2}(;[0-9]{1,2})?)?[m|K]//g" > /tmp/karma-run-output-$HASH
+cat /tmp/karma-run-output-$HASH
+# cat /tmp/testacular-run-output-$HASH > /tmp/vim-quickfix-errors
