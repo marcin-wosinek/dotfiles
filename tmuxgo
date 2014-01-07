@@ -10,7 +10,7 @@ tmux new-window -t $MAIN_SESSION:0 -k -n admin
 SESSION="synergy"
 SESSION_NAME="synergy"
 tmux new-session -d -s $SESSION
-tmux new-window -t "$SESSION:0" -k -n svn
+tmux new-window -t "$SESSION:0" -k -n git
 tmux send-keys -t "$SESSION:0" "cd ~/workspace/synergy" C-m
 tmux send-keys -t "$SESSION:0" "clear" C-m
 tmux new-window -t "$SESSION:1" -n portal-root
@@ -57,7 +57,7 @@ tmux send-keys -t "$SESSION:3" "grunt server" C-m
 tmux new-window -t "$SESSION:4" -n karma
 tmux send-keys -t "$SESSION:4" "cd ~/workspace/synergy/synergy/src/main/portal-root/_content/j/syngular-dev" C-m
 tmux send-keys -t "$SESSION:4" "clear" C-m
-tmux send-keys -t "$SESSION:4" "karma start" C-m
+tmux send-keys -t "$SESSION:4" "karma start karma-0.10.conf.js --reporters growl,dots" C-m
 
 tmux new-window -t $MAIN_SESSION:2 -n "$SESSION_NAME"
 tmux send-keys -t $MAIN_SESSION:2 "unset TMUX; tmux attach -t $SESSION" C-m
