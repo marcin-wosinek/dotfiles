@@ -54,4 +54,4 @@ export TERM=xterm-256color
 # Syntax higtlighing - TODO improve path
 source ~/dotfiles/zsh-highligthing/zsh-syntax-highlighting.zsh
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM

@@ -6,3 +6,5 @@ fi
 
 source ~/.nvm/nvm.sh
 nvm use 0.10.21
+export WIKI_URL="http://rochewiki.roche.com/confluence"
+export PATH=$PATH:/home/wosinekm/utils/vimfluence
