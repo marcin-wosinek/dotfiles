@@ -1,6 +1,5 @@
 #!/bin/bash
 MAIN_SESSION="main"
-
 tmux new-session -d -s $MAIN_SESSION
 
 #admin
@@ -24,7 +23,7 @@ tmux new-window -t "$SESSION:3" -n struts
 tmux send-keys -t "$SESSION:3" "cd ~/workspace/synergy/synergy/src/main/resources/template/synergy" C-m
 tmux send-keys -t "$SESSION:3" "clear" C-m
 tmux new-window -t "$SESSION:4" -n server
-tmux send-keys -t "$SESSION:4" "cd ~/" C-m
+tmux send-keys -t "$SESSION:4" "cd ~/workspace/synergy" C-m
 tmux send-keys -t "$SESSION:4" "clear" C-m
 tmux send-keys -t "$SESSION:4" "./synergy-build.sh; ./synergy-start.sh"
 tmux new-window -t "$SESSION:5" -n rest-test
@@ -57,34 +56,33 @@ tmux send-keys -t "$SESSION:3" "grunt server" C-m
 tmux new-window -t "$SESSION:4" -n karma
 tmux send-keys -t "$SESSION:4" "cd ~/workspace/synergy/synergy/src/main/portal-root/_content/j/syngular-dev" C-m
 tmux send-keys -t "$SESSION:4" "clear" C-m
-tmux send-keys -t "$SESSION:4" "karma start karma-0.10.conf.js --reporters growl,dots" C-m
+tmux send-keys -t "$SESSION:4" "karma start karma.conf.js --reporters growl,dots" C-m
 
 tmux new-window -t $MAIN_SESSION:2 -n "$SESSION_NAME"
 tmux send-keys -t $MAIN_SESSION:2 "unset TMUX; tmux attach -t $SESSION" C-m
 
-#synergy
-SESSION="synergy_2_16"
-SESSION_NAME="synergy-2.16"
-tmux new-session -d -s $SESSION
-tmux new-window -t "$SESSION:0" -k -n svn
-tmux send-keys -t "$SESSION:0" "cd ~/workspace/synergy-2.16" C-m
-tmux send-keys -t "$SESSION:0" "clear" C-m
-tmux new-window -t "$SESSION:1" -n portal-root
-tmux send-keys -t "$SESSION:1" "cd ~/workspace/synergy-2.16/synergy/src/main/portal-root" C-m
-tmux send-keys -t "$SESSION:1" "clear" C-m
-tmux send-keys -t "$SESSION:1" "vim ../webapp/WEB-INF/wro.groovy"
-tmux new-window -t "$SESSION:2" -n crowler
-tmux send-keys -t "$SESSION:2" "cd ~/workspace/synergy-2.16/synergy/src/main/portal-root" C-m
-tmux send-keys -t "$SESSION:2" "clear" C-m
-tmux new-window -t "$SESSION:3" -n struts
-tmux send-keys -t "$SESSION:3" "cd ~/workspace/synergy-2.16/synergy/src/main/resources/template/synergy" C-m
-tmux send-keys -t "$SESSION:3" "clear" C-m
-tmux new-window -t "$SESSION:4" -k -n server
-tmux send-keys -t "$SESSION:4" "cd ~/workspace/synergy-2.16" C-m
-tmux send-keys -t "$SESSION:4" "clear" C-m
+OTHER_SESSION="other"
+tmux new-session -d -s $OTHER_SESSION
 
-tmux new-window -t $MAIN_SESSION:3 -n "$SESSION_NAME"
-tmux send-keys -t $MAIN_SESSION:3 "unset TMUX; tmux attach -t $SESSION" C-m
+#synergy
+SESSION="synergy_infrastructure"
+SESSION_NAME="synergy-infrastructure"
+tmux new-session -d -s $SESSION
+tmux new-window -t "$SESSION:0" -k -n git
+tmux send-keys -t "$SESSION:0" "cd ~/workspace/synergy-infrastructure" C-m
+tmux send-keys -t "$SESSION:0" "clear" C-m
+tmux new-window -t "$SESSION:1" -n vim
+tmux send-keys -t "$SESSION:1" "cd ~/workspace/synergy-infrastructure" C-m
+tmux send-keys -t "$SESSION:1" "clear" C-m
+tmux new-window -t "$SESSION:2" -n testing
+tmux send-keys -t "$SESSION:2" "cd ~/workspace/synergy-infrastructure" C-m
+tmux send-keys -t "$SESSION:2" "clear" C-m
+tmux new-window -t "$SESSION:3" -n crowler
+tmux send-keys -t "$SESSION:3" "cd ~/workspace/synergy-infrastructure" C-m
+tmux send-keys -t "$SESSION:3" "clear" C-m
+
+tmux new-window -t $OTHER_SESSION:0 -n "$SESSION_NAME"
+tmux send-keys -t $OTHER_SESSION:0 "unset TMUX; tmux attach -t $SESSION" C-m
 
 #syngular
 SESSION="generator_angular"
@@ -103,8 +101,8 @@ tmux new-window -t "$SESSION:3" -n crawler
 tmux send-keys -t "$SESSION:3" "cd ~/workspace/generator-angular" C-m
 tmux send-keys -t "$SESSION:3" "clear" C-m
 
-tmux new-window -t $MAIN_SESSION:4 -n "$SESSION_NAME"
-tmux send-keys -t $MAIN_SESSION:4 "unset TMUX; tmux attach -t $SESSION" C-m
+tmux new-window -t $OTHER_SESSION:1 -n "$SESSION_NAME"
+tmux send-keys -t $OTHER_SESSION:1 "unset TMUX; tmux attach -t $SESSION" C-m
 
 #syngular
 SESSION="generator_karma"
@@ -123,9 +121,31 @@ tmux new-window -t "$SESSION:3" -n crawler
 tmux send-keys -t "$SESSION:3" "cd ~/workspace/generator-karma" C-m
 tmux send-keys -t "$SESSION:3" "clear" C-m
 
-tmux new-window -t $MAIN_SESSION:5 -n "$SESSION_NAME"
-tmux send-keys -t $MAIN_SESSION:5 "unset TMUX; tmux attach -t $SESSION" C-m
+tmux new-window -t $OTHER_SESSION:2 -n "$SESSION_NAME"
+tmux send-keys -t $OTHER_SESSION:2 "unset TMUX; tmux attach -t $SESSION" C-m
 
+#syngular
+SESSION="test"
+SESSION_NAME="test"
+tmux new-session -d -s $SESSION
+tmux new-window -t "$SESSION:0" -k -n git
+tmux send-keys -t "$SESSION:0" "cd ~/workspace/test" C-m
+tmux send-keys -t "$SESSION:0" "clear" C-m
+tmux new-window -t "$SESSION:1" -n vim
+tmux send-keys -t "$SESSION:1" "cd ~/workspace/test" C-m
+tmux send-keys -t "$SESSION:1" "clear" C-m
+tmux new-window -t "$SESSION:2" -n script
+tmux send-keys -t "$SESSION:2" "cd ~/workspace/test" C-m
+tmux send-keys -t "$SESSION:2" "clear" C-m
+
+tmux new-window -t $OTHER_SESSION:3 -n "$SESSION_NAME"
+tmux send-keys -t $OTHER_SESSION:3 "unset TMUX; tmux attach -t $SESSION" C-m
+
+tmux new-window -t $MAIN_SESSION:3 -n "$OTHER_SESSION"
+tmux send-keys -t $MAIN_SESSION:3 "unset TMUX; tmux attach -t $OTHER_SESSION" C-m
+
+GITHUB_SESSION="github"
+tmux new-session -d -s $GITHUB_SESSION
 
 #syngular
 SESSION="angular_js"
@@ -141,22 +161,11 @@ tmux new-window -t "$SESSION:2" -n crawler
 tmux send-keys -t "$SESSION:2" "cd ~/workspace/angular.js" C-m
 tmux send-keys -t "$SESSION:2" "clear" C-m
 
-tmux new-window -t $MAIN_SESSION:6 -n "$SESSION_NAME"
-tmux send-keys -t $MAIN_SESSION:6 "unset TMUX; tmux attach -t $SESSION" C-m
+tmux new-window -t $GITHUB_SESSION:0 -n "$SESSION_NAME"
+tmux send-keys -t $GITHUB_SESSION:0 "unset TMUX; tmux attach -t $SESSION" C-m
 
-#syngular
-SESSION="syngular2"
-SESSION_NAME="syngular2"
-tmux new-session -d -s $SESSION
-tmux new-window -t "$SESSION:0" -k -n git
-tmux send-keys -t "$SESSION:0" "cd ~/workspace/syngular2" C-m
-tmux send-keys -t "$SESSION:0" "clear" C-m
-tmux new-window -t "$SESSION:1" -n vim
-tmux send-keys -t "$SESSION:1" "cd ~/workspace/syngular2" C-m
-tmux send-keys -t "$SESSION:1" "clear" C-m
-
-tmux new-window -t $MAIN_SESSION:7 -n "$SESSION_NAME"
-tmux send-keys -t $MAIN_SESSION:7 "unset TMUX; tmux attach -t $SESSION" C-m
+tmux new-window -t $MAIN_SESSION:4 -n "$GITHUB_SESSION"
+tmux send-keys -t $MAIN_SESSION:4 "unset TMUX; tmux attach -t $GITHUB_SESSION" C-m
 
 #attach
 tmux attach -t $MAIN_SESSION
