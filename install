@@ -17,7 +17,6 @@ ln -s $DIR/zshrc ~/.zshrc
 ln -s $DIR/zprofile ~/.zprofile
 ln -s $DIR/tmux.conf ~/.tmux.conf
 ln -s $DIR/tmux.nested.conf ~/.tmux.nested.conf
-ln -s $DIR/nvm ~/.nvm
 
 ln -s $DIR/Xdefaults ~/.Xdefaults
 
