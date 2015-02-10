@@ -7,3 +7,4 @@ fi
 source ~/.nvm/nvm.sh
 export WIKI_URL="http://rochewiki.roche.com/confluence"
 export PATH=$PATH:/home/wosinekm/utils/vimfluence
+export CHROME_BIN=/usr/bin/chromium-browser
