@@ -20,8 +20,6 @@ ln -s $DIR/tmux.nested.conf ~/.tmux.nested.conf
 
 ln -s $DIR/Xdefaults ~/.Xdefaults
 
-ln -s $DIR/tmuxgo ~/tmuxgo
-
 # Add add bin folder
 ln -s $DIR/bin ~/bin
 
