@@ -56,3 +56,5 @@ source ~/dotfiles/zsh-highligthing/zsh-syntax-highlighting.zsh
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"  # This loads RVM
 source ~/.nvm/nvm.sh
+
+unset TMUX
